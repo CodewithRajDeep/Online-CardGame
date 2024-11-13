@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-      "api/main.go": {
+      "backend/api/main.go": {
         "runtime": "go1.x"
       }
     }
