@@ -86,6 +86,8 @@ This project lies within the fields of Computer Science and Software Engineering
    
    ## <a name="running">🎯Running the Application: </a>
    <img src="https://drive.google.com/uc?export=view&id=1sRh4eu2c_A83R5hwNYnXWDoC7sxEy4Ax" width="256" height="256"/>
+   <img src="https://drive.google.com/uc?export=view&id=1jCut1ywNGIwP7uult-1LEsFgpKJWuXjc" width="256" height="256"/>
+
     
       ```
       1.Start the Backend Server:
