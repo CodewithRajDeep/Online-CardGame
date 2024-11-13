@@ -12,16 +12,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello from Go on Vercel!")
 }
 
-
 func main() {
 	
 	handlers.InitializeRedis()
-	http.HandleFunc("/", Handler)
-	if err := http.ListenAndServe(":3000", nil); err != nil {
-        fmt.Println("Error starting server:", err)
-    }
-	
-	
+
 	r := mux.NewRouter()
 
 	
@@ -37,8 +31,10 @@ func main() {
 	r.HandleFunc("/leaderboard", handlers.GetLeaderboard).Methods("GET")
     r.HandleFunc("/leaderboard", handlers.UpdateLeaderboard).Methods("POST")
 
+	
 	r.Use(handlers.CORS)
 
+	
 	fmt.Println("Server is running on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
