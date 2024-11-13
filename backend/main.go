@@ -8,10 +8,20 @@ import (
     "github.com/CodewithRajDeep/Online-CardGame/backend/handlers"
 )
 
+func Handler(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
+    fmt.Fprintf(w, "Hello from Go backend!")
+}
+
+
 func main() {
 	
 	handlers.InitializeRedis()
-
+	http.HandleFunc("/", Handler)
+	if err := http.ListenAndServe(":3000", nil); err != nil {
+        fmt.Println("Error starting server:", err)
+    }
+	
 	
 	r := mux.NewRouter()
 
