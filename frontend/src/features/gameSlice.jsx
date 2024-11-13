@@ -1,6 +1,20 @@
-/* eslint-disable */
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+export const updateGameProgressBackend = createAsyncThunk(
+  'game/updateGameProgressBackend',
+  async (gameData, { getState }) => {
+    
+    const response = await fetch('https://your-backend-url/game-progress', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(gameData),
+    });
+    const data = await response.json();
+    return data; 
+  }
+);
 
 const initialState = {
   username: '',
@@ -9,7 +23,7 @@ const initialState = {
   defuseAvailable: false,
   gameOver: false,
   message: '',
-  points: 0, 
+  points: 0,
 };
 
 const cardTypes = [
@@ -28,14 +42,14 @@ const gameSlice = createSlice({
       state.deck = initializeDeck();
       state.gameOver = false;
       state.message = '';
-      state.points = 0; // Reset points at the start of a new game
+      state.points = 0;
     },
     drawCard: (state) => {
       if (state.deck.length === 0) return;
 
       const drawnCard = state.deck.pop();
       state.currentCard = drawnCard;
-      state.points += drawnCard.points; // Award points based on card type
+      state.points += drawnCard.points;
 
       switch (drawnCard.type) {
         case 'Cat':
@@ -67,6 +81,13 @@ const gameSlice = createSlice({
         state.gameOver = true;
         state.message = 'Congratulations! You won!';
       }
+
+      
+      updateGameProgressBackend({
+        username: state.username,
+        points: state.points,
+        gameOver: state.gameOver,
+      });
     },
     restartGame: (state) => {
       state.username = '';
@@ -80,6 +101,18 @@ const gameSlice = createSlice({
     resetGame: (state) => {
       return initialState;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(updateGameProgressBackend.pending, (state) => {
+      
+      })
+      .addCase(updateGameProgressBackend.fulfilled, (state, action) => {
+        
+      })
+      .addCase(updateGameProgressBackend.rejected, (state) => {
+        
+      });
   },
 });
 

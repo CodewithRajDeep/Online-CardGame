@@ -5,9 +5,18 @@ import (
     "net/http"
     "log"
     "math/rand"
+    "github.com/gorilla/handlers"
     "time"
 )
 
+func CORS(next http.Handler) http.Handler {
+	
+	return handlers.CORS(
+		handlers.AllowedOrigins([]string{"*"}), // Allow all origins or specify your frontend URL
+		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"}),
+		handlers.AllowedHeaders([]string{"Content-Type"}),
+	)(next)
+}
 
 type Game struct {
     ID        string  `json:"id"`

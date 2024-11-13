@@ -1,11 +1,12 @@
 package handlers
 
 import (
-    "encoding/json"
-    "net/http"
-    "github.com/go-redis/redis/v8"
     "context"
+    "encoding/json"
     "log"
+    "net/http"
+
+    "github.com/go-redis/redis/v8"
 )
 
 var rdb *redis.Client
@@ -17,12 +18,10 @@ func InitializeRedis() {
         Addr: "localhost:6379", 
     })
 
-    
     if err := rdb.Ping(ctx).Err(); err != nil {
         log.Fatalf("Redis connection failed: %v", err)
     }
 }
-
 
 func UpdateLeaderboard(w http.ResponseWriter, r *http.Request) {
     var requestData struct {
@@ -30,7 +29,6 @@ func UpdateLeaderboard(w http.ResponseWriter, r *http.Request) {
         NewScore   int    `json:"new_score"`
     }
 
-   
     if err := json.NewDecoder(r.Body).Decode(&requestData); err != nil {
         http.Error(w, "Invalid JSON", http.StatusBadRequest)
         return
@@ -46,11 +44,9 @@ func UpdateLeaderboard(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    
     w.Header().Set("Content-Type", "application/json")
     json.NewEncoder(w).Encode(map[string]string{"status": "success"})
 }
-
 
 func GetLeaderboard(w http.ResponseWriter, r *http.Request) {
     leaderboard, err := rdb.ZRevRangeWithScores(ctx, "leaderboard", 0, -1).Result()
@@ -59,7 +55,6 @@ func GetLeaderboard(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    
     var response []struct {
         PlayerName string  `json:"player_name"`
         Score      float64 `json:"score"`
@@ -75,7 +70,6 @@ func GetLeaderboard(w http.ResponseWriter, r *http.Request) {
         })
     }
 
-   
     w.Header().Set("Content-Type", "application/json")
     json.NewEncoder(w).Encode(response)
 }
