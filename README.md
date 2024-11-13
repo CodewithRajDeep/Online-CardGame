@@ -151,7 +151,13 @@ This project lies within the fields of Computer Science and Software Engineering
 
  ## <a name="contribute">💰Contribution Guidelines: </a>
    Guidelines for contributing to the project.
-
+   
+   To do so the following work, start as per with this:
+    🤖 git checkout -b feature-branch
+    🌞 git commit -am 'Add new feature'
+    ❣️ git push origin feature-branch
+    🏎️ Create a new Pull Request.
+    
   **🧙‍♂️Reporting Issues:**
 - Search for existing issues: Before creating a new issue, search the issue tracker to see if the problem has already been reported.
 - Provide clear and concise information: When creating a new issue, please include as much detail as possible, such as:
