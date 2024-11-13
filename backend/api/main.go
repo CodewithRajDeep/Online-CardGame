@@ -9,8 +9,7 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-    w.Header().Set("Content-Type", "application/json")
-    fmt.Fprintf(w, "Hello from Go backend!")
+	fmt.Fprintf(w, "Hello from Go on Vercel!")
 }
 
 
