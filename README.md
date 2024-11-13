@@ -38,7 +38,7 @@ This project lies within the fields of Computer Science and Software Engineering
  4.Responsive UI: Engaging and interactive interface with real-time updates styled in CSS for smooth user experience.
  5. Score Tracking: Earn points based on card draws, and aim for a high score.
 
-## <a name="#tech-stack">🐺Tech stack:  </a>
+## <a name="tech-stackk">🐺Tech stack:  </a>
  1. Frontend: React, React-component
  2. Styling:  Tailwind CSS, TypeScript
  3. Backend: Golang, Redis
