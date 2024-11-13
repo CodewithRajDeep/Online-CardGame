@@ -85,9 +85,12 @@ This project lies within the fields of Computer Science and Software Engineering
    ```
    
    ## <a name="running">🎯Running the Application: </a>
+   *Frontend:*
    <img src="https://drive.google.com/uc?export=view&id=1sRh4eu2c_A83R5hwNYnXWDoC7sxEy4Ax" width="256" height="256"/>
+   *Redis BackEnd:*
    <img src="https://drive.google.com/uc?export=view&id=1jCut1ywNGIwP7uult-1LEsFgpKJWuXjc" width="256" height="256"/>
-
+   *Go-pls Server:*
+   <img src="https://drive.google.com/uc?export=view&id=1db5arnAMuwRhM7hGqW4ZCuz_fz68G_9t" width="640" height="480"/>
     
       ```
       1.Start the Backend Server:
