@@ -9,8 +9,10 @@ import (
 
 
 type Card struct {
-	Value string `json:"value"`
+    ID  string `json:"id"`
 	Suit  string `json:"suit"`
+	 Type  string `json:"type"`  
+    Icon  string `json:"icon"`
 }
 
 
@@ -23,6 +25,10 @@ type Game struct {
 	Message    string `json:"message"`  
 }
 
+type Player struct {
+    Name string `json:"name"`
+    Wins int    `json:"wins"`
+}
 
 var RedisClient *redis.Client
 
