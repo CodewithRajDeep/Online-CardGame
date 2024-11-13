@@ -38,7 +38,7 @@ This project lies within the fields of Computer Science and Software Engineering
  4.Responsive UI: Engaging and interactive interface with real-time updates styled in CSS for smooth user experience.
  5. Score Tracking: Earn points based on card draws, and aim for a high score.
 
-## <a name="tech-stackk">🐺Tech stack:  </a>
+## <a name="tech-stack">🐺Tech stack:  </a>
  1. Frontend: React, React-component
  2. Styling:  Tailwind CSS, TypeScript
  3. Backend: Golang, Redis
@@ -84,7 +84,7 @@ This project lies within the fields of Computer Science and Software Engineering
       The frontend should run on http://localhost:3000.
    ```
    
-   ## <a name="#running">🎯Running the Application: </a>
+   ## <a name="running">🎯Running the Application: </a>
       ```
       1.Start the Backend Server:
           cd backend
@@ -125,7 +125,7 @@ This project lies within the fields of Computer Science and Software Engineering
       🎲GO_SERVER:                golang server start
       🦊REACT_APP_BACKEND_URL:  	Backend URL for frontend
 
-    ## <a name="#apidocumentation">📕API Documentation: </a>
+    ## <a name="apidocumentation">📕API Documentation: </a>
     *Endpoints*
       ```
        POST /game - Creates a new game.
