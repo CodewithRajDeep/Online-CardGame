@@ -1,17 +1,22 @@
 package main
 
 import (
-    "cardgame-backend/handlers"
-    "net/http"
-    "github.com/gorilla/mux"
-)
+	"fmt"
+	"log"
+	"net/http"
+	"github.com/gorilla/mux"
+    "github.com/CodewithRajDeep/Online-CardGame/backend/handlers"
+ )
 
 func main() {
-    r := mux.NewRouter()
+	r := mux.NewRouter()
 
-    r.HandleFunc("/api/start", handlers.StartGame).Methods("POST")
-    r.HandleFunc("/api/draw", handlers.DrawCard).Methods("GET")
-    r.HandleFunc("/api/leaderboard", handlers.GetLeaderboard).Methods("GET")
+	
+	r.HandleFunc("/game", handlers.CreateGame).Methods("POST")
+	r.HandleFunc("/draw", handlers.DrawCard).Methods("GET")
+	r.HandleFunc("/leaderboard", handlers.GetLeaderboard).Methods("GET")
+	r.HandleFunc("/leaderboard/{player}", handlers.UpdateLeaderboard).Methods("POST")
 
-    http.ListenAndServe(":8080", r)
+	fmt.Println("Server is running on http://localhost:8080")
+	log.Fatal(http.ListenAndServe(":8080", r))
 }

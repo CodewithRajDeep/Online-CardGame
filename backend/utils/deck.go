@@ -1,6 +1,7 @@
 package utils
 
-import "cardgame-backend/models"
+import "github.com/CodewithRajDeep/Online-CardGame/backend/models"
+
 
 
 var cardTypes = []models.Card{
