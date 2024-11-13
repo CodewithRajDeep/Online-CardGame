@@ -128,11 +128,11 @@ This project lies within the fields of Computer Science and Software Engineering
      ```
 
      ## <a name="environment">⚔❄️Environment Variables: </a>
-      **Variable:**	                **Description:**
-      🧑‍🎤REDIS_ADDRESS:	          Redis server address
-      🎡REDIS_CLIENT:             Redis client
-      🎲GO_SERVER:                golang server start
-      🦊REACT_APP_BACKEND_URL:  	Backend URL for frontend
+      **Variable:**	                  **Description:**
+      1.🧑‍🎤REDIS_ADDRESS:	             Redis server address
+      2.🎡REDIS_CLIENT:                Redis client
+      3.🎲GO_SERVER:                   golang server start
+      4.🦊REACT_APP_BACKEND_URL:  	    Backend URL for frontend
 
     ## <a name="apidocumentation">📕API Documentation: </a>
     *Endpoints*
